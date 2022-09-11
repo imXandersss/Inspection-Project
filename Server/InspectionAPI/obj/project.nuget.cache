@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hfhhjsWCdXSTsgDd2O89x5kuRygz5Vr4LEM9KaXSodhbTpa2kCxm4Efx7HeZxh+h+/qRM82E6/rkrR3y4sN7kw==",
+  "dgSpecHash": "QjpWfOz6+TTq67r43V7o+v13lXlPz16fFE5c60UYLcGwxg8lAQrnh/tnV4X7kPwHzALusAX8MNlyKVEQ9LH8CQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\xander\\Desktop\\InspectionAPI\\InspectionAPI\\InspectionAPI.csproj",
+  "projectFilePath": "C:\\Users\\xander\\Desktop\\InspectionAPI and Client\\Server\\InspectionAPI\\InspectionAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\xander\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\xander\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
