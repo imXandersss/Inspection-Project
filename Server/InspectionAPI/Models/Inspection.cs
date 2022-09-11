@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InspectionAPI.Models
 {
@@ -12,7 +13,8 @@ namespace InspectionAPI.Models
         [StringLength(200)]
         public string comments { get; set; }=string.Empty;
 
-        public int inspectionTypeId { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int idInspectionType { get; set; }
 
         public InspectionType? inspectionType{ get; set; }
     }

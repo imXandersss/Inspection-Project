@@ -41,11 +41,11 @@ namespace InspectionAPI.Controllers
         }
         
         [HttpPost]
-        public async Task<IActionResult> insertInspectionType(InspectionType inspectionType)
+        public async Task<ActionResult<InspectionType>> insertInspectionType(InspectionType inspectionType)
         {
             _dataContext.InspectionType.Add(inspectionType);
             await _dataContext.SaveChangesAsync();
-            return CreatedAtAction("Get InspectionType: ", new { id = inspectionType.id, inspectionType });
+            return CreatedAtAction("Get InspectionType: ", new { id= inspectionType.id}, inspectionType);
         }
 
 

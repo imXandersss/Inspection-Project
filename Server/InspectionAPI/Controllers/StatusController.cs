@@ -41,12 +41,12 @@ namespace InspectionAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> insertStatus(Status status)
+        public async Task<ActionResult<Status>> insertStatus(Status status)
         {
             _dataContext.Status.Add(status);
             await _dataContext.SaveChangesAsync();
 
-            return CreatedAtAction("Get Status",new { status.id, status});
+            return CreatedAtAction("Get Status",new {id = status.id}, status);
         }
 
 

@@ -1,0 +1,17 @@
+<table class="table table-striped">
+    <thead>
+        <th>ID</th>
+        <th>Inspection Type</th>
+        <th>Status</th>
+        <th>Comments</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let inspection of inspectionList$|async">
+            <td>{{inspection.id}}</td>
+            <td>{{inspection.inspectionTypeId}}</td>
+            <td>{{inspection.status}}</td>
+            <td>{{inspection.comments}}</td>
+        </tr>
+    </tbody>
+
+</table>

@@ -1,6 +1,5 @@
 ﻿using InspectionAPI.Data;
 using InspectionAPI.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -40,7 +39,7 @@ namespace InspectionAPI.Controllers
 
  
         [HttpPut("{id}")]
-        public async Task<IActionResult> updateInspection(int id, Inspection inspection)
+        public async Task<ActionResult<Inspection>> updateInspection(int id, Inspection inspection)
         {
             if (inspectionExist(id))
             {
@@ -70,14 +69,16 @@ namespace InspectionAPI.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> insertInspection(Inspection inspection)
+        public async Task<ActionResult<Inspection>> insertInspection(Inspection inspection)
         {
-            {
+            
                 _dataContext.Inspections.Add(inspection);
                 await _dataContext.SaveChangesAsync();
-                return CreatedAtAction("Get Inspection: ", new { id = inspection.id, inspection });
-            }
+                return CreatedAtAction("Get Inspection: ", new { id= inspection.id}, inspection);
         }
+
+
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> deleteInspection(int id)
         {
