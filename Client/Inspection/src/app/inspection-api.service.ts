@@ -24,7 +24,7 @@ export class InspectionApiService {
   }
 
   deleteInspection(id:number|String){
-    return this.httpClient.delete(this.inspectionApiURL.concat(`inspection/${id}`));
+    return this.httpClient.delete(this.inspectionApiURL.concat(`/inspection/${id}`));
   }
 
   //InspectionType
@@ -42,14 +42,14 @@ export class InspectionApiService {
   }
 
   deleteInspectionType(id:number|String){
-    return this.httpClient.delete(this.inspectionApiURL.concat(`inspectiontype/${id}`));
+    return this.httpClient.delete(this.inspectionApiURL.concat(`/inspectiontype/${id}`));
   }
 
 
   //Status
 
   getAllStatues():Observable<any[]>{
-    return this.httpClient.get<any>(this.inspectionApiURL.concat("status"));
+    return this.httpClient.get<any>(this.inspectionApiURL.concat("/status"));
   }
 
   insertStatus(data:any){

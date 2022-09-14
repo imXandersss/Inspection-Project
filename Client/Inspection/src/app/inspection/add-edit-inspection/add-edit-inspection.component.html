@@ -1,1 +1,32 @@
-<p>add-edit-inspection works!</p>
+<form>
+    <div class="mb-3">
+        <label for="idInspectionType" class="form-label">Inspection Type</label>
+        <!-- <input type="text" class="form-control" name="idInspectionType"[(ngModel)]="idInspectionType" 
+    *ngIf="inspection.id!=0" disabled> -->
+
+    <select class="form-control" name="idInspectionType" id="idInspectionType" 
+    [(ngModel)]="idInspectionType" *ngIf="inspection.id==0">
+    <option *ngFor="let inspectionType of inspectioTypesList$|async" [value]="inspectionType.id">{{inspectionType.inspectionName}}</option></select>
+    </div>    
+
+
+    <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <select class="form-control" name="status" id="status"  [(ngModel)]="status">
+            <option *ngFor="let status of statusList$|async" [value]="status.id">{{status.statusOptions}}</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="comments" class="form-label">Comments</label>
+        <input type="text" class="form-control" [(ngModel)]="comments" name="comments">
+    </div>
+
+    <button (click)="addInspection()" *ngIf="inspection.id==0" class="btn btn-primary">
+        Add
+    </button>
+   
+    <button (click)="updateInspection()" *ngIf="inspection.id!=0" class="btn btn-primary">
+        Update
+    </button>
+</form>
